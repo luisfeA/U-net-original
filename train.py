@@ -28,7 +28,6 @@ def read_image(path):
     x = cv2.resize(x, (W, H))
     x = x/255.0
     x = x.astype(np.float32)
-    print()
     return x
 
 def read_mask(path):
@@ -96,14 +95,14 @@ if __name__ == "__main__":
     create_dir("files")
 
     """ Hyperparameters """
-    batch_size = 3
+    batch_size = 5
     lr = 1e-4   ## 0.0001
     num_epochs = 1
     model_path = "files/model.h5"
     csv_path = "files/data.csv"
 
     """ Dataset """
-    dataset_path = "C:/Users/Luisfe/PycharmProjects/pythonProject/sperSegGs/"
+    dataset_path = "./sperSegGs/experimento1/"
     (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
     train_x, train_y = shuffle(train_x, train_y)
 

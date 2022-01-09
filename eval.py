@@ -56,7 +56,7 @@ if __name__ == "__main__":
         model = tf.keras.models.load_model("files/model.h5")
 
     """ Dataset """
-    dataset_path = "C:/Users/Luisfe/PycharmProjects/pythonProject/sperSegGs/"
+    dataset_path = "./sperSegGs/experimento1/"
     (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
     """ Prediction and metrics values """
     SCORE = []
@@ -72,7 +72,7 @@ if __name__ == "__main__":
         #print(y_pred)
         y_pred = y_pred.astype(np.int32)
         #print(y_pred)
-        save_path = f"C:/Users/Luisfe/PycharmProjects/pythonProject/results/{name}"
+        save_path = f"./sperSegGs/experimento1/resultados/{name}"
         save_result(ori_x, ori_y, y_pred, save_path)
 
         """ Flattening the numpy arrays. """
