@@ -28,6 +28,7 @@ def read_image(path):
     x = cv2.resize(x, (W, H))
     x = x/255.0
     x = x.astype(np.float32)
+    print()
     return x
 
 def read_mask(path):
