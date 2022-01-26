@@ -99,7 +99,7 @@ def load_data(path, split=0.3):
 if __name__ == "__main__":
     """ Seeding """
     np.random.seed(42)
-    tf.random.set_seed(42)
+    tf.set_random_seed(42)
 
     """ Directory to save files """
     create_dir("files")
