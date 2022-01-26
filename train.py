@@ -153,7 +153,5 @@ if __name__ == "__main__":
         train_dataset,
         epochs=num_epochs,
         validation_data=valid_dataset,
-        steps_per_epoch=train_steps,
-        validation_steps=valid_steps,
         callbacks=callbacks
     )
