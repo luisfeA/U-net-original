@@ -99,7 +99,7 @@ def load_data(path, split=0.3):
 if __name__ == "__main__":
     """ Seeding """
     np.random.seed(42)
-    tf.set_random_seed(42)
+    tf.random.set_seed(42)
 
     """ Directory to save files """
     create_dir("files")
@@ -107,7 +107,7 @@ if __name__ == "__main__":
     """ Hyperparameters """
     batch_size = 2
     lr = 1e-4   ## 0.0001
-    num_epochs = 150
+    num_epochs = 1
     model_path = "files/model.h5"
     csv_path = "files/data.csv"
 
