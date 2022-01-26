@@ -107,7 +107,7 @@ if __name__ == "__main__":
     """ Hyperparameters """
     batch_size = 2
     lr = 1e-4   ## 0.0001
-    num_epochs = 1
+    num_epochs = 150
     model_path = "files/model.h5"
     csv_path = "files/data.csv"
 
