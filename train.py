@@ -89,7 +89,7 @@ def load_data(path, split=0.3):
     test_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen2.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen6.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))
-   
+
 
     return (train_x, train_y), (valid_x, valid_y), (test_x, test_y)
 
@@ -99,7 +99,7 @@ def load_data(path, split=0.3):
 if __name__ == "__main__":
     """ Seeding """
     np.random.seed(42)
-    tf.random.set_seed(42)
+    tf.set_random_seed(42)
 
     """ Directory to save files """
     create_dir("files")
