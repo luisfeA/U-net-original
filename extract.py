@@ -1,6 +1,6 @@
 import zipfile, os
 
-working_directory = '/experimentos/imagenes/'
+working_directory = './experimentos/imagenes/'
 os.chdir(working_directory)
 
 for file in os.listdir(working_directory):   # get the list of files
