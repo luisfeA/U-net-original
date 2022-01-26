@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
     """ Load Model """
     with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-        model = tf.keras.models.load_model("files/model.h5")
+        model = tf.keras.models.load_model("'/home/DIINF/labello/U-net-original/files/model.h5")
 
     """ Dataset """
     dataset_path = "experimentos/imagenes/"
