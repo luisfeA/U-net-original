@@ -144,14 +144,16 @@ if __name__ == "__main__":
 
     callbacks = [
         ModelCheckpoint(model_path, verbose=1, save_best_only=True),
-        ReduceLROnPlateau(monitor='loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
+        #ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
         CSVLogger(csv_path),
-        EarlyStopping(monitor='loss', patience=20, restore_best_weights=False)
+        #EarlyStopping(monitor='val_loss', patience=20, restore_best_weights=False)
     ]
 
     model.fit(
         train_dataset,
         epochs=num_epochs,
         validation_data=valid_dataset,
+        steps_per_epoch=train_steps,
+        validation_steps=valid_steps,
         callbacks=callbacks
     )
