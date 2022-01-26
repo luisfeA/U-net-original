@@ -59,14 +59,14 @@ def tf_dataset(X, Y, batch=8):
 
 def load_data(path, split=0.3):
     train_x = []
-    for imagen in os.listdir(path+"imagenes-aumentadas/"):
+    for imagen in os.listdir("/home/DIINF/labello/U-net-original/"+path+"imagenes-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path+"imagenes-aumentadas/", imagen, "*.jpg")))
         print(train_x)
 
     #train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
-    for mask in os.listdir(path + "mask-aumentadas/"):
+    for mask in os.listdir("/home/DIINF/labello/U-net-original/"+path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
         print(train_y)
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     csv_path = "files/data.csv"
 
     """ Dataset """
-    dataset_path = "./experimentos/imagenes/"
+    dataset_path = "experimentos/imagenes/"
     (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
     train_x, train_y = shuffle(train_x, train_y)
 
