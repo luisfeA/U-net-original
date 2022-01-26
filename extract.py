@@ -7,4 +7,4 @@ for file in os.listdir(working_directory):   # get the list of files
     print(file)
     if zipfile.is_zipfile(file): # if it is a zipfile, extract it
         with zipfile.ZipFile(file) as item: # treat the file as a zip
-           item.extractall()  # extract it in the working directory
+           item.extractall(working_directory)  # extract it in the working directory
