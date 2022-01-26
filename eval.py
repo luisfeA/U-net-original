@@ -72,7 +72,7 @@ if __name__ == "__main__":
         #print(y_pred)
         y_pred = y_pred.astype(np.int32)
         #print(y_pred)
-        save_path = f"./sperSegGs/experimento1/resultados/{name}"
+        save_path = f"./experimentos/resultados/{name}"
         save_result(ori_x, ori_y, y_pred, save_path)
 
         """ Flattening the numpy arrays. """

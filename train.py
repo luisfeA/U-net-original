@@ -58,28 +58,38 @@ def tf_dataset(X, Y, batch=8):
     return dataset
 
 def load_data(path, split=0.3):
-    #images = os.listdir("/sperSegGs/images/")
-    #mask = os.listdir("/sperSegGs/mask/")
+    train_x = []
+    for imagen in os.listdir(path+"imagenes-aumentadas/"):
+        train_x = train_x + sorted(glob(os.path.join(path+"imagenes-aumentadas/", imagen, "*.jpg")))
+        print(train_x)
 
-    train_x = sorted(glob(os.path.join(path+"train/", "images", "*.jpg")))
-    print(train_x)
-    train_y = sorted(glob(os.path.join(path+"train/", "masks", "*.jpg")))
+    #train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
-    valid_x = sorted(glob(os.path.join(path+"valid/", "images", "*.jpg")))
-    valid_y = sorted(glob(os.path.join(path+"valid/", "masks", "*.jpg")))
+    train_y = []
+    for mask in os.listdir(path + "mask-aumentadas/"):
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
+        print(train_y)
+    #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
-    test_x = sorted(glob(os.path.join(path+"test/", "images", "*.jpg")))
-    test_y = sorted(glob(os.path.join(path+"test/", "masks", "*.jpg")))
-    #images = sorted(glob(os.path.join(path, "images", "*.jpg")))
-    #print(images)
-    #masks = sorted(glob(os.path.join(path, "masks", "*.jpg")))
-    #size = int(len(images) * split)
+    valid_x = sorted(glob(os.path.join(path + "imagenes-originales/", "Placa1-imagen12.jpg")))
+    valid_x = valid_x + sorted(glob(os.path.join(path + "imagenes-originales/", "Placa1-imagen19.jpg")))
+    valid_x = valid_x + sorted(glob(os.path.join(path + "imagenes-originales/", "Placa1-imagen20.jpg")))
+    print(valid_x)
 
-    #train_x, valid_x = train_test_split(images, test_size=size, random_state=42)
-    #train_y, valid_y = train_test_split(masks, test_size=size, random_state=42)
+    valid_y = sorted(glob(os.path.join(path + "mask-originales/", "Placa1-imagen12.jpg")))
+    valid_y = valid_y + sorted(glob(os.path.join(path + "mask-originales/", "Placa1-imagen19.jpg")))
+    valid_y = valid_y + sorted(glob(os.path.join(path + "mask-originales/", "Placa1-imagen20.jpg")))
+    print(valid_y)
 
-    #train_x, test_x = train_test_split(train_x, test_size=size, random_state=42)
-    #train_y, test_y = train_test_split(train_y, test_size=size, random_state=42)
+    test_x = sorted(glob(os.path.join(path + "imagenes-originales/", "Placa1-imagen2.jpg")))
+    test_x = test_x + sorted(glob(os.path.join(path + "imagenes-originales/", "Placa1-imagen6.jpg")))
+    test_x = test_x + sorted(glob(os.path.join(path + "imagenes-originales/", "Placa1-imagen10.jpg")))
+    print(test_x)
+
+    test_y = sorted(glob(os.path.join(path + "mask-originales/", "Placa1-imagen2.jpg")))
+    test_y = test_y + sorted(glob(os.path.join(path + "mask-originales/", "Placa1-imagen6.jpg")))
+    test_y = test_y + sorted(glob(os.path.join(path + "mask-originales/", "Placa1-imagen10.jpg")))
+    print(test_y)
 
     return (train_x, train_y), (valid_x, valid_y), (test_x, test_y)
 
@@ -95,14 +105,14 @@ if __name__ == "__main__":
     create_dir("files")
 
     """ Hyperparameters """
-    batch_size = 5
+    batch_size = 2
     lr = 1e-4   ## 0.0001
-    num_epochs = 1
+    num_epochs = 150
     model_path = "files/model.h5"
     csv_path = "files/data.csv"
 
     """ Dataset """
-    dataset_path = "./sperSegGs/experimento1/"
+    dataset_path = "./experimentos/imagenes/"
     (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
     train_x, train_y = shuffle(train_x, train_y)
 
