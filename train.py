@@ -61,35 +61,35 @@ def load_data(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/"+path+"images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path+"images-aumentadas/", imagen, "*.jpg")))
-        print(train_x)
+
 
     #train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/"+path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        print(train_y)
+
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
     valid_x = sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen12.jpg")))
     valid_x = valid_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg")))
     valid_x = valid_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg")))
-    print(valid_x)
+
 
     valid_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen12.jpg")))
     valid_y = valid_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))
     valid_y = valid_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen20.jpg")))
-    print(valid_y)
+
 
     test_x = sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen2.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen6.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))
-    print(test_x)
+
 
     test_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen2.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen6.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))
-    print(test_y)
+   
 
     return (train_x, train_y), (valid_x, valid_y), (test_x, test_y)
 
