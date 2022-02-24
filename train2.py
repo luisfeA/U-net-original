@@ -62,6 +62,8 @@ def load_data(path, split=0.3):
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
+        print(train_x)
+        print(sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg"))))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
