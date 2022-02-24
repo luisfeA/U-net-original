@@ -61,16 +61,20 @@ def load_data(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -507,7 +511,7 @@ if __name__ == "__main__":
     tf.set_random_seed(42)
 
     """ Directory to save files """
-    create_dir("files-con-una-perdida")
+    create_dir("files-con-dos-perdidas")
 
     """ Hyperparameters """
     batch_size = 1
@@ -515,8 +519,8 @@ if __name__ == "__main__":
     num_epochs = 1
 
     for i in range(1, 11):
-        model_path = "files/model-aumento-con-una-perdida"+str(i)+".h5"
-        csv_path = "files/data-aumento-con-una-perdida"+str(i)+".csv"
+        model_path = "files/model-aumento-con-dos-perdidas"+str(i)+".h5"
+        csv_path = "files/data-aumento-con-dos-perdidas"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
