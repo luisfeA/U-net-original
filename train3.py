@@ -83,7 +83,7 @@ def load_data(path, split=0.3):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
-    train_y = sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
     train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen12.jpg")))[0]))
     train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))[0]))
     train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen20.jpg")))[0]))
