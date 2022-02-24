@@ -484,74 +484,73 @@ if __name__ == "__main__":
     num_epochs = 150
 
     for i in range(2, 11):
-        with tf.device('/gpu:0'):
-            model_path = "files/model-aumento-sin-perdida"+str(i)+".h5"
-            csv_path = "files/data-aumento-sin-perdida"+str(i)+".csv"
+        model_path = "files/model-aumento-sin-perdida"+str(i)+".h5"
+        csv_path = "files/data-aumento-sin-perdida"+str(i)+".csv"
 
-            """ Dataset """
-            dataset_path = "experimentos/imagenes/"
+        """ Dataset """
+        dataset_path = "experimentos/imagenes/"
 
-            if i == 1:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 2:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data2(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 3:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 4:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 5:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data5(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 6:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 7:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data7(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 8:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data8(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 9:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data9(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
-            elif i == 10:
-                (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data10(dataset_path)
-                train_x, train_y = shuffle(train_x, train_y)
+        if i == 1:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 2:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data2(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 3:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 4:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 5:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data5(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 6:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 7:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data7(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 8:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data8(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 9:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data9(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 10:
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data10(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
 
-            print(f"Train: {len(train_x)} - {len(train_y)}")
-            print(f"Valid: {len(valid_x)} - {len(valid_y)}")
-            print(f"Test: {len(test_x)} - {len(test_y)}")
+        print(f"Train: {len(train_x)} - {len(train_y)}")
+        print(f"Valid: {len(valid_x)} - {len(valid_y)}")
+        print(f"Test: {len(test_x)} - {len(test_y)}")
 
-            train_dataset = tf_dataset(train_x, train_y, batch=batch_size)
-            valid_dataset = tf_dataset(valid_x, valid_y, batch=batch_size)
+        train_dataset = tf_dataset(train_x, train_y, batch=batch_size)
+        valid_dataset = tf_dataset(valid_x, valid_y, batch=batch_size)
 
-            train_steps = (len(train_x)//batch_size)
-            valid_steps = (len(valid_x)//batch_size)
+        train_steps = (len(train_x)//batch_size)
+        valid_steps = (len(valid_x)//batch_size)
 
-            if len(train_x) % batch_size != 0:
-                train_steps += 1
+        if len(train_x) % batch_size != 0:
+            train_steps += 1
 
-            if len(valid_x) % batch_size != 0:
-                valid_steps += 1
+        if len(valid_x) % batch_size != 0:
+            valid_steps += 1
 
-            """ Model """
-            model = build_unet((H, W, 3))
-            metrics = [dice_coef, iou, Recall(), Precision()]
-            model.compile(loss="binary_crossentropy", optimizer=Adam(lr), metrics=metrics)
-            callbacks = [
-                ModelCheckpoint(model_path, verbose=1, save_best_only=True),
-                #ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
-                CSVLogger(csv_path),
-                #EarlyStopping(monitor='val_loss', patience=20, restore_best_weights=False)
-            ]
+        """ Model """
+        model = build_unet((H, W, 3))
+        metrics = [dice_coef, iou, Recall(), Precision()]
+        model.compile(loss="binary_crossentropy", optimizer=Adam(lr), metrics=metrics)
+        callbacks = [
+            ModelCheckpoint(model_path, verbose=1, save_best_only=True),
+            #ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
+            CSVLogger(csv_path),
+            #EarlyStopping(monitor='val_loss', patience=20, restore_best_weights=False)
+        ]
 
-            model.fit(
-                train_dataset,
-                epochs=num_epochs,
-                validation_data=valid_dataset,
-                callbacks=callbacks
-            )
+        model.fit(
+            train_dataset,
+            epochs=num_epochs,
+            validation_data=valid_dataset,
+            callbacks=callbacks
+        )
