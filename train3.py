@@ -514,9 +514,9 @@ if __name__ == "__main__":
     create_dir("files-con-dos-perdidas")
 
     """ Hyperparameters """
-    batch_size = 1
+    batch_size = 2
     lr = 1e-4   ## 0.0001
-    num_epochs = 1
+    num_epochs = 150
 
     for i in range(1, 11):
         with tf.device('/gpu:2'):
@@ -525,7 +525,7 @@ if __name__ == "__main__":
 
             """ Dataset """
             dataset_path = "experimentos/imagenes/"
-    
+
             if i == 1:
                 (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
                 train_x, train_y = shuffle(train_x, train_y)
@@ -581,7 +581,7 @@ if __name__ == "__main__":
                 ModelCheckpoint(model_path, verbose=1, save_best_only=True),
                 #ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
                 CSVLogger(csv_path),
-                #EarlyStopping(monitor='val_loss', patience=20, restore_best_weights=False)
+                EarlyStopping(monitor='val_loss', patience=20, restore_best_weights=False)
             ]
 
             model.fit(
