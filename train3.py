@@ -68,12 +68,12 @@ def load_data(path, split=0.3):
 
     train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
     print(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen12.jpg")))[0]))
-    train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen12.jpg"))))
-    train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg"))))
-    train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg"))))
-    train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen2.jpg"))))
-    train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen6.jpg"))))
-    train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg"))))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen12.jpg")))[0]))
+    #train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg"))))
+    #train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg"))))
+    #train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen2.jpg"))))
+    #train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen6.jpg"))))
+    #train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg"))))
     print(train_x)
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
