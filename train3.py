@@ -519,8 +519,8 @@ if __name__ == "__main__":
     num_epochs = 1
 
     for i in range(1, 11):
-        model_path = "files/model-aumento-con-dos-perdidas"+str(i)+".h5"
-        csv_path = "files/data-aumento-con-dos-perdidas"+str(i)+".csv"
+        model_path = "files-con-dos-perdidas/model-aumento-con-dos-perdidas"+str(i)+".h5"
+        csv_path = "files-con-dos-perdidas/data-aumento-con-dos-perdidas"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
