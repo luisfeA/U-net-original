@@ -67,6 +67,7 @@ def load_data(path, split=0.3):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
 
     train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    print(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen12.jpg"))))
     train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen12.jpg"))))
     train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg"))))
     train_x = train_x.remove(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg"))))
