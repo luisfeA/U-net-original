@@ -62,6 +62,7 @@ if __name__ == "__main__":
     SCORE = []
     for x, y in tqdm(zip(test_x, test_y), total=len(test_x)):
         name = x.split("/")[-1]
+        print(name)
         """ Reading the image and mask """
         ori_x, x = read_image(x)
         ori_y, y = read_mask(y)
