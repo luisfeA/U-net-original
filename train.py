@@ -479,9 +479,9 @@ if __name__ == "__main__":
     create_dir("files")
 
     """ Hyperparameters """
-    batch_size = 1
+    batch_size = 2
     lr = 1e-4   ## 0.0001
-    num_epochs = 1
+    num_epochs = 150
 
     for i in range(2, 11):
         model_path = "files/model-aumento-sin-perdida"+str(i)+".h5"

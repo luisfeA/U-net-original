@@ -490,9 +490,9 @@ if __name__ == "__main__":
     create_dir("files-con-una-perdida")
 
     """ Hyperparameters """
-    batch_size = 2
+    batch_size = 1
     lr = 1e-4   ## 0.0001
-    num_epochs = 150
+    num_epochs = 1
 
     for i in range(1, 11):
         model_path = "files/model-aumento-con-una-perdida"+str(i)+".h5"
