@@ -72,7 +72,7 @@ if __name__ == "__main__":
         #print(y_pred)
         y_pred = y_pred.astype(np.int32)
         #print(y_pred)
-        save_path = f"experimentos/resultados/{name}"
+        save_path = f"/home/DIINF/labello/U-net-original/experimentos/resultados/{name}"
         save_result(ori_x, ori_y, y_pred, save_path)
 
         """ Flattening the numpy arrays. """
@@ -98,4 +98,4 @@ if __name__ == "__main__":
 
     """ Saving all the results """
     df = pd.DataFrame(SCORE, columns=["Image", "Accuracy", "F1", "Jaccard", "Recall", "Precision"])
-    df.to_csv("files/score.csv")
+    df.to_csv("/home/DIINF/labello/U-net-original/files/score.csv")
