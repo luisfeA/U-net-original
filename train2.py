@@ -63,8 +63,8 @@ def load_data(path, split=0.3):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
-        print("RGB: " + str(sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))))
-        print("RGB2: " + str(sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))))
+        print("RGB: " + str(len(sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg"))))))
+        print("RGB2: " + str(len(sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg"))))))
 
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
@@ -74,7 +74,7 @@ def load_data(path, split=0.3):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
-        print("mask: " + str(sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))))
+        print("mask: " + str(len(sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg"))))))
 
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
