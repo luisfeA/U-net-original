@@ -126,16 +126,35 @@ def load_data2(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen4.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen5.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen13.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen14.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen15.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen4.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen5.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen13.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen14.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen15.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -171,16 +190,35 @@ def load_data4(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen11.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen13.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen16.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen17.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen11.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen13.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen16.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen17.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -216,16 +254,35 @@ def load_data3(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen3.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen5.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen6.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen15.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen17.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen3.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen5.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen6.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen15.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen17.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen20.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -261,16 +318,33 @@ def load_data5(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen4.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen8.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen16.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen18.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen4.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen8.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen16.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen18.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen20.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -303,16 +377,33 @@ def load_data6(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen1.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen3.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen6.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen13.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen16.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen1.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen3.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen6.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen13.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen16.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -347,16 +438,35 @@ def load_data7(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen1.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen4.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen5.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen16.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen18.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen1.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen4.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen5.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen16.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen18.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -393,16 +503,35 @@ def load_data8(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen1.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen3.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen6.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen9.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen1.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen3.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen6.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen9.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen20.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -439,16 +568,33 @@ def load_data9(path, split=0.3):
     train_x = []
     for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
+
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen1.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen5.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen11.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen15.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen18.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
     for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen1.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen5.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen11.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen15.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen18.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
@@ -481,19 +627,33 @@ def load_data9(path, split=0.3):
 
 def load_data10(path, split=0.3):
     train_x = []
-    for imagen in os.listdir("/home/DIINF/labello/U-net-original/"+path+"images-aumentadas/"):
-        train_x = train_x + sorted(glob(os.path.join(path+"images-aumentadas/", imagen, "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/"+imagen, '/Perdida 1/', "*.jpg")))
-        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/" + imagen, '/Perdida 2/', "*.jpg")))
+    for imagen in os.listdir("/home/DIINF/labello/U-net-original/" + path + "images-aumentadas/"):
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 1/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "Perdida 2/*.jpg")))
+        train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
 
+    train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen8.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen11.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen15.jpg")))[0]))
 
-    #train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
+    # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
     train_y = []
-    for mask in os.listdir("/home/DIINF/labello/U-net-original/"+path + "mask-aumentadas/"):
+    for mask in os.listdir("/home/DIINF/labello/U-net-original/" + path + "mask-aumentadas/"):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/"+mask, '/Perdida 1/', "*.jpg")))
-        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/" + mask, '/Perdida 2/', "*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 1/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
+        train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
+    train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen8.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen11.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen15.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
