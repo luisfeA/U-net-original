@@ -84,11 +84,17 @@ def load_data(path, split=0.3):
     test_x = sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen2.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen6.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))
+    test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen12.jpg")))
+    test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg")))
+    test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen20.jpg")))
 
 
     test_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen2.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen6.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))
+    test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen12.jpg")))
+    test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))
+    test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen20.jpg")))
 
 
     return (train_x, train_y), (valid_x, valid_y), (test_x, test_y)
