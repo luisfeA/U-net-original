@@ -515,9 +515,9 @@ if __name__ == "__main__":
     num_epochs = 1
 
     for i in range(1, 11):
-        with tf.device('/gpu:0'):
+        with tf.device('/gpu:1'):
             model_path = "files-con-una-perdida/model-aumento-con-una-perdida"+str(i)+".h5"
-            csv_path = "files-con-una-perdidas/data-aumento-con-una-perdida"+str(i)+".csv"
+            csv_path = "files-con-una-perdida/data-aumento-con-una-perdida"+str(i)+".csv"
 
             """ Dataset """
             dataset_path = "experimentos/imagenes/"
