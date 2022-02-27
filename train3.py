@@ -196,12 +196,12 @@ def load_data4(path, split=0.3):
         train_x = train_x + sorted(glob(os.path.join(path + "images-aumentadas/", imagen, "perdida 2/*.jpg")))
 
     train_x = train_x + sorted(glob(os.path.join(path + "images-original/", "*.jpg")))
-    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen1.jpg")))[0]))
     train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen11.jpg")))[0]))
     train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen13.jpg")))[0]))
     train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen16.jpg")))[0]))
     train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen17.jpg")))[0]))
-    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg")))[0]))
+    train_x.remove(str(sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen9.jpg")))[0]))
 
     # train_x = sorted(glob(os.path.join(path+"imagenes-aumentadas/", "Placa1-imagen1", "*.jpg")))
 
@@ -213,39 +213,39 @@ def load_data4(path, split=0.3):
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "Perdida 2/*.jpg")))
         train_y = train_y + sorted(glob(os.path.join(path + "mask-aumentadas/", mask, "perdida 2/*.jpg")))
     train_y = train_y + sorted(glob(os.path.join(path + "mask-original/", "*.jpg")))
-    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen1.jpg")))[0]))
     train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen11.jpg")))[0]))
     train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen13.jpg")))[0]))
     train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen16.jpg")))[0]))
     train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen17.jpg")))[0]))
-    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))[0]))
+    train_y.remove(str(sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen9.jpg")))[0]))
 
     #train_y = sorted(glob(os.path.join(path+"mask-aumentadas/", "masks", "*.jpg")))
 
-    valid_x = sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))
+    valid_x = sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen1.jpg")))
     valid_x = valid_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen11.jpg")))
     valid_x = valid_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen13.jpg")))
 
 
-    valid_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))
+    valid_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen1.jpg")))
     valid_y = valid_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen11.jpg")))
     valid_y = valid_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen13.jpg")))
 
 
-    test_x = sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen10.jpg")))
+    test_x = sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen1.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen11.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen13.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen16.jpg")))
     test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen17.jpg")))
-    test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen19.jpg")))
+    test_x = test_x + sorted(glob(os.path.join(path + "images-original/", "Placa1-imagen9.jpg")))
 
 
-    test_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen10.jpg")))
+    test_y = sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen1.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen11.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen13.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen16.jpg")))
     test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen17.jpg")))
-    test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen19.jpg")))
+    test_y = test_y + sorted(glob(os.path.join(path + "mask-original/", "Placa1-imagen9.jpg")))
 
 
     return (train_x, train_y), (valid_x, valid_y), (test_x, test_y)
@@ -693,7 +693,7 @@ if __name__ == "__main__":
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(1, 11):
+    for i in range(2, 11):
         model_path = "files-con-dos-perdidas/model-aumento-con-dos-perdidas"+str(i)+".h5"
         csv_path = "files-con-dos-perdidas/data-aumento-con-dos-perdidas"+str(i)+".csv"
 
