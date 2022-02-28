@@ -646,7 +646,7 @@ if __name__ == "__main__":
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(3, 11):
+    for i in range(5, 11):
         model_path = "files-con-una-perdida/model-aumento-con-una-perdida"+str(i)+".h5"
         csv_path = "files-con-una-perdida/data-aumento-con-una-perdida"+str(i)+".csv"
 
