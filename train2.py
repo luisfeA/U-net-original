@@ -639,16 +639,16 @@ if __name__ == "__main__":
     tf.set_random_seed(42)
 
     """ Directory to save files """
-    create_dir("files-con-una-perdida")
+    create_dir("files-menos-1-capa")
 
     """ Hyperparameters """
     batch_size = 2
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(10, 11):
-        model_path = "files-con-una-perdida/model-aumento-con-una-perdida"+str(i)+".h5"
-        csv_path = "files-con-una-perdida/data-aumento-con-una-perdida"+str(i)+".csv"
+    for i in range(1, 11):
+        model_path = "files-menos-1-capa/model"+str(i)+".h5"
+        csv_path = "files-menos-1-capa/data"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
