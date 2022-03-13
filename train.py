@@ -613,7 +613,7 @@ if __name__ == "__main__":
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(8, 11):
+    for i in range(2, 3):
         model_path = "files/model-aumento-sin-perdida"+str(i)+".h5"
         csv_path = "files/data-aumento-sin-perdida"+str(i)+".csv"
 
