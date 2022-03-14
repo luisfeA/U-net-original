@@ -647,8 +647,8 @@ if __name__ == "__main__":
     num_epochs = 150
 
     for i in range(1, 11):
-        model_path = "files-menos-1-3-4-capa/model"+str(i)+".h5"
-        csv_path = "files-menos-1-3-4-capa/data"+str(i)+".csv"
+        model_path = "files-menos-2-3-4-capa/model"+str(i)+".h5"
+        csv_path = "files-menos-2-3-4-capa/data"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
