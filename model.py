@@ -49,22 +49,22 @@ def build_unet(input_shape):
     inputs = Input(input_shape)
 
     """ Encoder """
-    s1, p1 = encoder_block(inputs, 64)
-    s2, p2 = encoder_block(p1, 128)
-    s3, p3 = encoder_block(p2, 256)
-    #s4, p4 = encoder_block(p3, 512)
+    #s1, p1 = encoder_block(inputs, 64)
+    #s2, p2 = encoder_block(p1, 128)
+    s3, p3 = encoder_block(inputs, 256)
+    s4, p4 = encoder_block(p3, 512)
 
     """ Bottleneck """
     b1 = conv_block(p3, 1024)
 
     """ Decoder """
-    #d1 = decoder_block(b1, s4, 512)
-    d2 = decoder_block(b1, s3, 256)
-    d3 = decoder_block(d2, s2, 128)
-    d4 = decoder_block(d3, s1, 64)
+    d1 = decoder_block(b1, s4, 512)
+    d2 = decoder_block(d1, s3, 256)
+    #d3 = decoder_block(d2, s2, 128)
+    #d4 = decoder_block(d3, s1, 64)
 
     """ Output layer """
-    outputs = Conv2D(1, 1, padding="same", activation="sigmoid")(d4)
+    outputs = Conv2D(1, 1, padding="same", activation="sigmoid")(d2)
     #rank_4_tensor = tf.zeros([768,576,1])
     #x = tf.add(outputs, rank_4_tensor)
     outputs = tf.image.resize(outputs, [580, 780])
