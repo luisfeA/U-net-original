@@ -10,6 +10,8 @@ from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger, ReduceLROnPla
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.metrics import Recall, Precision
 from tensorflow.keras.models import load_model
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 from model import build_unet
 from metrics import dice_coef, iou
 
@@ -633,7 +635,6 @@ def load_data10(path, split=0.3):
     return (train_x, train_y), (valid_x, valid_y), (test_x, test_y)
 
 
-
 if __name__ == "__main__":
     """ Seeding """
     np.random.seed(42)
@@ -657,6 +658,7 @@ if __name__ == "__main__":
         if i == 1:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
+            model = build_unet((H, W, 3))
             model = load_model("files-menos-2-3-4-capa/data1.h5")
         elif i == 2:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data2(dataset_path)
