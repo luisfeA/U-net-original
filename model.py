@@ -55,7 +55,7 @@ def build_unet(input_shape):
     #s4, p4 = encoder_block(p3, 512)
 
     """ Bottleneck """
-    b1 = conv_block(p1, 1024)
+    b1 = conv_block(p3, 1024)
 
     """ Decoder """
     #d1 = decoder_block(b1, s4, 512)
