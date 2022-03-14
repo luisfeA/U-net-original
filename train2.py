@@ -10,8 +10,6 @@ from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger, ReduceLROnPla
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.metrics import Recall, Precision
 from tensorflow.keras.models import load_model
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
 from model import build_unet
 from metrics import dice_coef, iou
 
@@ -635,13 +633,14 @@ def load_data10(path, split=0.3):
     return (train_x, train_y), (valid_x, valid_y), (test_x, test_y)
 
 
+
 if __name__ == "__main__":
     """ Seeding """
     np.random.seed(42)
     tf.set_random_seed(42)
 
     """ Directory to save files """
-    create_dir("files-menos-1-3-4-capa")
+    create_dir("files-menos-4-capa")
 
     """ Hyperparameters """
     batch_size = 2
@@ -649,8 +648,8 @@ if __name__ == "__main__":
     num_epochs = 150
 
     for i in range(1, 11):
-        model_path = "files-menos-2-3-4-capa/model"+str(i)+".h5"
-        csv_path = "files-menos-2-3-4-capa/data"+str(i)+".csv"
+        model_path = "files-menos-4-capa/model"+str(i)+".h5"
+        csv_path = "files-menos-4-capa/data"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
@@ -658,44 +657,33 @@ if __name__ == "__main__":
         if i == 1:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
-            model = load_model("files-menos-2-3-4-capa/data1.h5")
         elif i == 2:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data2(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 3:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 4:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 5:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data5(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 6:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 7:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data7(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 8:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data8(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 9:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data9(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
         elif i == 10:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data10(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
-            model = build_unet((H, W, 3))
 
         print(f"Train: {len(train_x)} - {len(train_y)}")
         print(f"Valid: {len(valid_x)} - {len(valid_y)}")
@@ -714,6 +702,7 @@ if __name__ == "__main__":
             valid_steps += 1
 
         """ Model """
+        model = build_unet((H, W, 3))
         metrics = [dice_coef, iou, Recall(), Precision()]
         model.compile(loss="binary_crossentropy", optimizer=Adam(lr), metrics=metrics)
         callbacks = [
