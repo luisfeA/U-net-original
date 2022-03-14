@@ -642,7 +642,7 @@ if __name__ == "__main__":
     create_dir("files-menos-1-2-capa")
 
     """ Hyperparameters """
-    batch_size = 2
+    batch_size = 1
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
