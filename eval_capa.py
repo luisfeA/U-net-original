@@ -118,15 +118,15 @@ if __name__ == "__main__":
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
                 model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-1-capa/model1.h5")
         elif i == 2:
-            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data2(dataset_path)
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
             save_path = "experimentos/resultados/experimento1/capa2/"
             cvc_path = "experimentos/resultados/experimento1/capa2/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
                 model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-2-capa/model1.h5")
         elif i == 3:
-            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
-            save_path = "experimentos/resultados/experimento1/capa3"
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
+            save_path = "experimentos/resultados/experimento1/capa3/"
             cvc_path = "experimentos/resultados/experimento1/capa3/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
