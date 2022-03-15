@@ -640,16 +640,16 @@ if __name__ == "__main__":
     tf.set_random_seed(42)
 
     """ Directory to save files """
-    create_dir("files-menos-2-3-4-capa")
+    create_dir("files-menos-3-4-capa")
 
     """ Hyperparameters """
     batch_size = 2
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(1, 11):
-        model_path = "files-menos-2-3-4-capa/model"+str(i)+".h5"
-        csv_path = "files-menos-2-3-4-capa/data"+str(i)+".csv"
+    for i in range(2, 11):
+        model_path = "files-menos-3-4-capa/model"+str(i)+".h5"
+        csv_path = "files-menos-3-4-capa/data"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
