@@ -73,38 +73,38 @@ if __name__ == "__main__":
     create_dir("experimentos/resultados/experimento9")
     create_dir("experimentos/resultados/experimento10")
 
-    create_dir("experimentos/resultados/experimento1/capa1")
-    create_dir("experimentos/resultados/experimento2/capa1")
-    create_dir("experimentos/resultados/experimento3/capa1")
-    create_dir("experimentos/resultados/experimento4/capa1")
-    create_dir("experimentos/resultados/experimento5/capa1")
-    create_dir("experimentos/resultados/experimento6/capa1")
-    create_dir("experimentos/resultados/experimento7/capa1")
-    create_dir("experimentos/resultados/experimento8/capa1")
-    create_dir("experimentos/resultados/experimento9/capa1")
-    create_dir("experimentos/resultados/experimento10/capa1")
+    create_dir("experimentos/resultados/experimento1/capa4")
+    create_dir("experimentos/resultados/experimento2/capa4")
+    create_dir("experimentos/resultados/experimento3/capa4")
+    create_dir("experimentos/resultados/experimento4/capa4")
+    create_dir("experimentos/resultados/experimento5/capa4")
+    create_dir("experimentos/resultados/experimento6/capa4")
+    create_dir("experimentos/resultados/experimento7/capa4")
+    create_dir("experimentos/resultados/experimento8/capa4")
+    create_dir("experimentos/resultados/experimento9/capa4")
+    create_dir("experimentos/resultados/experimento10/capa4")
 
-    create_dir("experimentos/resultados/experimento1/capa2")
-    create_dir("experimentos/resultados/experimento2/capa2")
-    create_dir("experimentos/resultados/experimento3/capa2")
-    create_dir("experimentos/resultados/experimento4/capa2")
-    create_dir("experimentos/resultados/experimento5/capa2")
-    create_dir("experimentos/resultados/experimento6/capa2")
-    create_dir("experimentos/resultados/experimento7/capa2")
-    create_dir("experimentos/resultados/experimento8/capa2")
-    create_dir("experimentos/resultados/experimento9/capa2")
-    create_dir("experimentos/resultados/experimento10/capa2")
+    create_dir("experimentos/resultados/experimento1/capa3-4")
+    create_dir("experimentos/resultados/experimento2/capa3-4")
+    create_dir("experimentos/resultados/experimento3/capa3-4")
+    create_dir("experimentos/resultados/experimento4/capa3-4")
+    create_dir("experimentos/resultados/experimento5/capa3-4")
+    create_dir("experimentos/resultados/experimento6/capa3-4")
+    create_dir("experimentos/resultados/experimento7/capa3-4")
+    create_dir("experimentos/resultados/experimento8/capa3-4")
+    create_dir("experimentos/resultados/experimento9/capa3-4")
+    create_dir("experimentos/resultados/experimento10/capa3-4")
 
-    create_dir("experimentos/resultados/experimento1/capa3")
-    create_dir("experimentos/resultados/experimento2/capa3")
-    create_dir("experimentos/resultados/experimento3/capa3")
-    create_dir("experimentos/resultados/experimento4/capa3")
-    create_dir("experimentos/resultados/experimento5/capa3")
-    create_dir("experimentos/resultados/experimento6/capa3")
-    create_dir("experimentos/resultados/experimento7/capa3")
-    create_dir("experimentos/resultados/experimento8/capa3")
-    create_dir("experimentos/resultados/experimento9/capa3")
-    create_dir("experimentos/resultados/experimento10/capa3")
+    create_dir("experimentos/resultados/experimento1/capa2-3-4")
+    create_dir("experimentos/resultados/experimento2/capa2-3-4")
+    create_dir("experimentos/resultados/experimento3/capa2-3-4")
+    create_dir("experimentos/resultados/experimento4/capa2-3-4")
+    create_dir("experimentos/resultados/experimento5/capa2-3-4")
+    create_dir("experimentos/resultados/experimento6/capa2-3-4")
+    create_dir("experimentos/resultados/experimento7/capa2-3-4")
+    create_dir("experimentos/resultados/experimento8/capa2-3-4")
+    create_dir("experimentos/resultados/experimento9/capa2-3-4")
+    create_dir("experimentos/resultados/experimento10/capa2-3-4")
 
     for i in range(1, 4):
         (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
@@ -112,25 +112,25 @@ if __name__ == "__main__":
 
         if i == 1:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
-            save_path = "experimentos/resultados/experimento1/capa1/"
-            cvc_path = "experimentos/resultados/experimento1/capa1/score.csv"
+            save_path = "experimentos/resultados/experimento1/capa4/"
+            cvc_path = "experimentos/resultados/experimento1/capa4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-1-capa/model1.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model1.h5")
         elif i == 2:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
-            save_path = "experimentos/resultados/experimento1/capa2/"
-            cvc_path = "experimentos/resultados/experimento1/capa2/score.csv"
+            save_path = "experimentos/resultados/experimento1/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento1/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-2-capa/model1.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model1.h5")
         elif i == 3:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
-            save_path = "experimentos/resultados/experimento1/capa3/"
-            cvc_path = "experimentos/resultados/experimento1/capa3/score.csv"
+            save_path = "experimentos/resultados/experimento1/capa2-3-4/"
+            cvc_path = "experimentos/resultados/experimento1/capa2-3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-capa/model1.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-2-3-4-capa/model1.h5")
         elif i == 4:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
             save_path = "experimentos/resultados/experimento4/caso2/"
