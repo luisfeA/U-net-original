@@ -647,7 +647,7 @@ if __name__ == "__main__":
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(2, 11):
+    for i in range(7, 11):
         model_path = "files-menos-4-capa/model"+str(i)+".h5"
         csv_path = "files-menos-4-capa/data"+str(i)+".csv"
 
