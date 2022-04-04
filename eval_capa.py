@@ -112,74 +112,74 @@ if __name__ == "__main__":
 
         if i == 1:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
-            save_path = "experimentos/resultados/experimento1/capa4/"
-            cvc_path = "experimentos/resultados/experimento1/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento1/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento1/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model1.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model1.h5")
         elif i == 2:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data2(dataset_path)
-            save_path = "experimentos/resultados/experimento2/capa4/"
-            cvc_path = "experimentos/resultados/experimento2/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento2/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento2/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model2.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model2.h5")
         elif i == 3:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
-            save_path = "experimentos/resultados/experimento3/capa4/"
-            cvc_path = "experimentos/resultados/experimento3/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento3/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento3/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model3.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model3.h5")
         elif i == 4:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
-            save_path = "experimentos/resultados/experimento4/capa4/"
-            cvc_path = "experimentos/resultados/experimento4/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento4/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento4/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model4.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model4.h5")
         elif i == 5:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data5(dataset_path)
-            save_path = "experimentos/resultados/experimento5/capa4/"
-            cvc_path = "experimentos/resultados/experimento5/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento5/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento5/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model5.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model5.h5")
         elif i == 6:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data6(dataset_path)
-            save_path = "experimentos/resultados/experimento6/capa4/"
-            cvc_path = "experimentos/resultados/experimento6/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento6/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento6/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model6.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model6.h5")
         elif i == 7:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data7(dataset_path)
-            save_path = "experimentos/resultados/experimento7/capa4/"
-            cvc_path = "experimentos/resultados/experimento7/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento7/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento7/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model7.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model7.h5")
         elif i == 8:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data8(dataset_path)
-            save_path = "experimentos/resultados/experimento8/capa4/"
-            cvc_path = "experimentos/resultados/experimento8/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento8/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento8/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model8.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model8.h5")
         elif i == 9:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data9(dataset_path)
-            save_path = "experimentos/resultados/experimento9/capa4/"
-            cvc_path = "experimentos/resultados/experimento9/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento9/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento9/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model9.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model9.h5")
         elif i == 10:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data10(dataset_path)
-            save_path = "experimentos/resultados/experimento10/capa4/"
-            cvc_path = "experimentos/resultados/experimento10/capa4/score.csv"
+            save_path = "experimentos/resultados/experimento10/capa3-4/"
+            cvc_path = "experimentos/resultados/experimento10/capa3-4/score.csv"
             """ Load Model """
             with CustomObjectScope({'iou': iou, 'dice_coef': dice_coef}):
-                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-4-capa/model10.h5")
+                model = tf.keras.models.load_model("/home/DIINF/labello/U-net-original/files-menos-3-4-capa/model10.h5")
 
         SCORE = []
         for x, y in tqdm(zip(test_x, test_y), total=len(test_x)):
