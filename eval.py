@@ -106,7 +106,7 @@ if __name__ == "__main__":
     create_dir("experimentos/resultados/experimento9/caso3")
     create_dir("experimentos/resultados/experimento10/caso3")
 
-    for i in range(2, 3):
+    for i in range(4, 5):
         save_path = ''
         name = ''
         (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data(dataset_path)
