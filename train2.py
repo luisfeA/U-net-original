@@ -694,11 +694,13 @@ if __name__ == "__main__":
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
         elif i == 13:
+            batch_size = 8
             num_epochs = 200
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
         elif i == 14:
-            batch_size = 8
+            batch_size = 2
+            lr = 1e-2  ## 0.0001
             num_epochs = 200
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
@@ -709,12 +711,6 @@ if __name__ == "__main__":
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
         elif i == 16:
-            batch_size = 2
-            lr = 1e-2  ## 0.0001
-            num_epochs = 200
-            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
-            train_x, train_y = shuffle(train_x, train_y)
-        elif i == 17:
             batch_size = 2
             lr = 1e-5  ## 0.0001
             num_epochs = 200
