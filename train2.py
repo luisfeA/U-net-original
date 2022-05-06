@@ -640,16 +640,16 @@ if __name__ == "__main__":
     tf.set_random_seed(42)
 
     """ Directory to save files """
-    create_dir("files-menos-4-capa")
+    create_dir("files-hyperparameters")
 
     """ Hyperparameters """
     batch_size = 2
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(7, 11):
-        model_path = "files-menos-4-capa/model"+str(i)+".h5"
-        csv_path = "files-menos-4-capa/data"+str(i)+".csv"
+    for i in range(11, 12):
+        model_path = "files-hyperparameters/model"+str(i)+".h5"
+        csv_path = "files-hyperparameters/data"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
@@ -683,6 +683,10 @@ if __name__ == "__main__":
             train_x, train_y = shuffle(train_x, train_y)
         elif i == 10:
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data10(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 11:
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
 
         print(f"Train: {len(train_x)} - {len(train_y)}")
