@@ -647,7 +647,7 @@ if __name__ == "__main__":
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(11, 12):
+    for i in range(11, 13):
         model_path = "files-hyperparameters/model"+str(i)+".h5"
         csv_path = "files-hyperparameters/data"+str(i)+".csv"
 
@@ -685,6 +685,38 @@ if __name__ == "__main__":
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data10(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
         elif i == 11:
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 12:
+            batch_size = 4
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 13:
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 14:
+            batch_size = 8
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 15:
+            batch_size = 2
+            lr = 1e-3  ## 0.0001
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 16:
+            batch_size = 2
+            lr = 1e-2  ## 0.0001
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
+        elif i == 17:
+            batch_size = 2
+            lr = 1e-5  ## 0.0001
             num_epochs = 200
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
