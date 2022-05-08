@@ -694,7 +694,7 @@ if __name__ == "__main__":
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
         elif i == 13:
-            batch_size = 8
+            batch_size = 6
             num_epochs = 200
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
