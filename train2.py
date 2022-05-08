@@ -647,7 +647,7 @@ if __name__ == "__main__":
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(13, 15):
+    for i in range(15, 17):
         model_path = "files-hyperparameters/model"+str(i)+".h5"
         csv_path = "files-hyperparameters/data"+str(i)+".csv"
 
