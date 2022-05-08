@@ -748,5 +748,6 @@ if __name__ == "__main__":
             train_dataset,
             epochs=num_epochs,
             validation_data=valid_dataset,
-            callbacks=callbacks
+            callbacks=callbacks,
+            use_multiprocessing=True
         )
