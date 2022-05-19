@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger, ReduceLROnPlateau, EarlyStopping
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.metrics import Recall, Precision
 from tensorflow.keras.models import load_model
 from model import build_unet
@@ -647,7 +648,7 @@ if __name__ == "__main__":
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(15, 17):
+    for i in range(17, 18):
         model_path = "files-hyperparameters/model"+str(i)+".h5"
         csv_path = "files-hyperparameters/data"+str(i)+".csv"
 
@@ -716,6 +717,12 @@ if __name__ == "__main__":
             num_epochs = 200
             (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data3(dataset_path)
             train_x, train_y = shuffle(train_x, train_y)
+        elif i == 17:
+            batch_size = 2
+            lr = 1e-4  ## 0.0001
+            num_epochs = 200
+            (train_x, train_y), (valid_x, valid_y), (test_x, test_y) = load_data4(dataset_path)
+            train_x, train_y = shuffle(train_x, train_y)
 
         print(f"Train: {len(train_x)} - {len(train_y)}")
         print(f"Valid: {len(valid_x)} - {len(valid_y)}")
@@ -736,7 +743,7 @@ if __name__ == "__main__":
         """ Model """
         model = build_unet((H, W, 3))
         metrics = [dice_coef, iou, Recall(), Precision()]
-        model.compile(loss="binary_crossentropy", optimizer=Adam(lr), metrics=metrics)
+        model.compile(loss="binary_crossentropy", optimizer=SGD(lr), metrics=metrics)
         callbacks = [
             ModelCheckpoint(model_path, verbose=1, save_best_only=True),
             #ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5, min_lr=1e-7, verbose=1),
