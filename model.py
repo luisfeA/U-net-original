@@ -55,7 +55,7 @@ def build_unet(input_shape):
 
     """ Decodificador """
     d1 = decoder_block(b1, s4, 512)
-    d2 = decoder_block(b1, s3, 256)
+    d2 = decoder_block(d1, s3, 256)
     d3 = decoder_block(d2, s2, 128)
     #d4 = decoder_block(d3, s1, 64)
 
