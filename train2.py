@@ -641,16 +641,16 @@ if __name__ == "__main__":
     tf.set_random_seed(42)
 
     """ Directory to save files """
-    create_dir("files-hyperparameters")
+    create_dir("files-features")
 
     """ Hyperparameters """
     batch_size = 2
     lr = 1e-4   ## 0.0001
     num_epochs = 150
 
-    for i in range(17, 18):
-        model_path = "files-hyperparameters/model"+str(i)+".h5"
-        csv_path = "files-hyperparameters/data"+str(i)+".csv"
+    for i in range(1, 10):
+        model_path = "files-features/model"+str(i)+".h5"
+        csv_path = "files-features/data"+str(i)+".csv"
 
         """ Dataset """
         dataset_path = "experimentos/imagenes/"
