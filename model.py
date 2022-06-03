@@ -46,21 +46,21 @@ def build_unet(input_shape):
 
     """ Codificador """
     #s1, p1 = encoder_block(inputs, 64)
-    #s2, p2 = encoder_block(p1, 128)
-    s3, p3 = encoder_block(inputs, 256)
+    s2, p2 = encoder_block(inputs, 128)
+    #s3, p3 = encoder_block(p1, 256)
     #s4, p4 = encoder_block(inputs, 512)
 
     """ Capa intermedia """
-    b1 = conv_block(p3, 1024)
+    b1 = conv_block(p2, 1024)
 
     """ Decodificador """
     #d1 = decoder_block(b1, s4, 512)
-    d2 = decoder_block(b1, s3, 256)
-    #d3 = decoder_block(b1, s2, 128)
+    #d2 = decoder_block(b1, s3, 256)
+    d3 = decoder_block(b1, s2, 128)
     #d4 = decoder_block(d3, s1, 64)
 
     """ Resultado """
-    outputs = Conv2D(1, 1, padding="same", activation="sigmoid")(d2)
+    outputs = Conv2D(1, 1, padding="same", activation="sigmoid")(d3)
     outputs = tf.image.resize(outputs, [580, 780])
     model = Model(inputs, outputs, name="UNET")
     return model
